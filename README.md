@@ -1,1 +1,1 @@
-# MLOps_SBT
+# SBT MLOps 2024 Fall
