@@ -1,4 +1,2 @@
-[core]
-    remote = onedrive
-['remote "onedrive"']
-    url = ../onedrive:/dvc-storage
+['remote "onedrive_remote"']
+    url = T:\
