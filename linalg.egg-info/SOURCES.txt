@@ -1,0 +1,15 @@
+LinearAlgebra.cpp
+LinearAlgebra.h
+MANIFEST.in
+Makefile
+README.md
+bindings.cpp
+pyproject.toml
+setup.py
+test_linalg.cpp
+test_script.py
+linalg.egg-info/PKG-INFO
+linalg.egg-info/SOURCES.txt
+linalg.egg-info/dependency_links.txt
+linalg.egg-info/not-zip-safe
+linalg.egg-info/top_level.txt

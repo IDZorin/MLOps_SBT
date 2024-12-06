@@ -1,0 +1,14 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - src/model.py
+      - src/data_module.py
+      - config/config.yaml
+      - config/data.yaml
+      - config/model.yaml
+      - config/trainer.yaml
+      - dvc_data/iris.csv.dvc
+    outs:
+      - model.ckpt
