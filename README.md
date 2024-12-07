@@ -69,14 +69,50 @@ Diff: 1.90 times
 
 # HW 2 - **Hydra, DVC, Lightning**
 
-## dvc
+## Краткое описание выполненных шагов
 
-### rclone
+1. **Подготовка DataModule и Model**:
 
-'''powershell
+   - Использован Python модуль с биндингами для подготовки данных в `TitanicDataModule`.
+   - Реализован `SimpleTitanicModel` для обучения модели.
 
+2. **Hydra конфигурация**:
+
+   - Созданы конфигурационные файлы для Hydra (`config.yaml`, `data.yaml`, `model.yaml`, `trainer.yaml`).
+   - Точка входа `train.py` использует Hydra для управления конфигурациями.
+
+3. **DVC интеграция**:
+
+   - Подключен DVC для управления данными.
+   - Добавлены данные в DVC и настроено удаленное хранилище (через onedrive при помощи rclone).
+
+4. **Запуск обучения**:
+
+   - Обучение модели запускается с использованием подготовленных конфигураций и данных.
+
+## Команды
+
+**rclone**
+
+```
 ./rclone.exe mount onedrive:dvc-storage T: --vfs-cache-mode writes
+```
 
-'''
+**dvc**
 
-dvc add dvc_data/iris.csv
+```
+dvc add dvc_data/titanic.csv
+dvc commit
+```
+
+**data collection**
+
+```
+python scripts\generate_titanic.py
+```
+
+**training**
+
+```
+python src/train.py
+```

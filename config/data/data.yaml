@@ -1,3 +1,3 @@
 data_path: dvc_data/titanic.csv
-batch_size: 16
+batch_size: 64
 train_size: 100 

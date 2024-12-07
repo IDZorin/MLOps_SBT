@@ -5,6 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 import torch
 import pandas as pd
 import numpy as np
+from linalg_core import LinearAlgebra
 
 
 class TitanicDataset(Dataset):
@@ -35,7 +36,13 @@ class TitanicDataset(Dataset):
         x = self.X[idx]
         y = self.y[idx]
 
-        x = torch.tensor(x, dtype=torch.float32)
+        # Преобразуем x в форму (1, N), чтобы транспонировать без проблем
+        x_2d = x.reshape(1, -1)  # Важно: здесь (1, -1), а не (2, -1)!
+
+        x_2d_t = LinearAlgebra.transpose(x_2d)
+        x_restored = np.array(x_2d_t).flatten()
+
+        x = torch.tensor(x_restored, dtype=torch.float32)
         y = torch.tensor(y, dtype=torch.long)
 
         return x, y
@@ -60,8 +67,18 @@ class TitanicDataModule(pl.LightningDataModule):
 
     def train_dataloader(self):
         return DataLoader(
-            self.train_dataset, batch_size=self.batch_size, shuffle=True, num_workers=4
+            self.train_dataset,
+            batch_size=self.batch_size,
+            shuffle=True,
+            num_workers=4,
+            persistent_workers=True,
+            pin_memory=True,
         )
 
     def val_dataloader(self):
-        return DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=4)
+        return DataLoader(
+            self.val_dataset,
+            batch_size=self.batch_size,
+            num_workers=4,
+            persistent_workers=True,
+        )
