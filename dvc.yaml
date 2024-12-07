@@ -6,9 +6,8 @@ stages:
       - src/model.py
       - src/data_module.py
       - config/config.yaml
-      - config/data.yaml
-      - config/model.yaml
-      - config/trainer.yaml
-      - dvc_data/iris.csv.dvc
+      - config/data/data.yaml
+      - config/model/model.yaml
+      - config/trainer/trainer.yaml
     outs:
       - model.ckpt

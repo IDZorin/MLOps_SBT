@@ -68,3 +68,15 @@ Diff: 1.90 times
 ```
 
 # HW 2 - **Hydra, DVC, Lightning**
+
+## dvc
+
+### rclone
+
+'''powershell
+
+./rclone.exe mount onedrive:dvc-storage T: --vfs-cache-mode writes
+
+'''
+
+dvc add dvc_data/iris.csv
