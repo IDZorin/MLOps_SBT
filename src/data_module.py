@@ -13,7 +13,7 @@ class TitanicDataset(Dataset):
         df = pd.read_csv(data_path)
 
         # Предобработка данных
-        df = df.ffill()  # Исправлено предупреждение
+        df = df.ffill()
 
         # Автоматически определяем категориальные столбцы
         categorical_cols = df.select_dtypes(
@@ -37,7 +37,7 @@ class TitanicDataset(Dataset):
         y = self.y[idx]
 
         # Преобразуем x в форму (1, N), чтобы транспонировать без проблем
-        x_2d = x.reshape(1, -1)  # Важно: здесь (1, -1), а не (2, -1)!
+        x_2d = x.reshape(1, -1)
 
         x_2d_t = LinearAlgebra.transpose(x_2d)
         x_restored = np.array(x_2d_t).flatten()
