@@ -4,27 +4,27 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-class SimpleIrisModel(pl.LightningModule):
-    def __init__(self, lr=0.001):
+class SimpleTitanicModel(pl.LightningModule):
+    def __init__(self, input_size, lr=0.001):
         super().__init__()
         self.lr = lr
-        self.layer = nn.Linear(4, 3)  # 4 features -> 3 classes
+        self.layer = nn.Linear(input_size, 1)
 
     def forward(self, x):
-        return self.layer(x)
+        return torch.sigmoid(self.layer(x))
 
     def training_step(self, batch, batch_idx):
         x, y = batch
-        logits = self(x)
-        loss = F.cross_entropy(logits, y)
+        logits = self(x).squeeze()
+        loss = F.binary_cross_entropy(logits, y.float())
         self.log("train_loss", loss)
         return loss
 
     def validation_step(self, batch, batch_idx):
         x, y = batch
-        logits = self(x)
-        loss = F.cross_entropy(logits, y)
-        acc = (logits.argmax(dim=-1) == y).float().mean()
+        logits = self(x).squeeze()
+        loss = F.binary_cross_entropy(logits, y.float())
+        acc = ((logits > 0.5) == y).float().mean()
         self.log("val_loss", loss, prog_bar=True)
         self.log("val_acc", acc, prog_bar=True)
         return loss

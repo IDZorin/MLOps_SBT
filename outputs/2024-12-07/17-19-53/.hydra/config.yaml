@@ -1,0 +1,10 @@
+data:
+  data_path: dvc_data/iris.csv
+  batch_size: 16
+  train_size: 100
+model:
+  lr: 0.001
+trainer:
+  max_epochs: 5
+  accelerator: cpu
+  devices: 1

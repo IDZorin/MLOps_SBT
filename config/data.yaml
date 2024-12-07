@@ -1,3 +1,0 @@
-data_path: dvc_data/iris.csv
-batch_size: 16
-train_size: 100 
