@@ -1,8 +1,0 @@
-include LinearAlgebra.h
-include LinearAlgebra.cpp
-include bindings.cpp
-include setup.py
-include pyproject.toml
-include Makefile
-include test_linalg.cpp
-include test_script.py
