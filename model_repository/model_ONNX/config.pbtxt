@@ -1,0 +1,28 @@
+name: "model_ONNX"
+platform: "onnxruntime_onnx"
+max_batch_size: 8
+default_model_filename: "model.onnx"
+
+input {
+  name: "INPUT_IDS"
+  data_type: TYPE_INT32
+  dims: [128]
+}
+input {
+  name: "ATTENTION_MASK"
+  data_type: TYPE_INT32
+  dims: [128]
+}
+
+output  {
+  name: "EMBEDDINGS"
+  data_type: TYPE_FP32
+  dims: [ -1, 2 ] # [batch, seq_len, 2]
+}
+
+instance_group {
+  count: 1
+  kind: KIND_GPU
+}
+
+dynamic_batching {}

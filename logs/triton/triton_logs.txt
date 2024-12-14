@@ -1,0 +1,251 @@
+docker logs a5cfa3bc30c3 > triton_logs.txt
+I1213 23:03:36.771163 1 pinned_memory_manager.cc:241] Pinned memory pool is created at '0x7055cc000000' with size 268435456
+I1213 23:03:36.771433 1 cuda_memory_manager.cc:107] CUDA memory pool is created on device 0 with size 67108864
+I1213 23:03:36.774384 1 model_lifecycle.cc:461] loading: model_TRT_BEST:1
+I1213 23:03:36.774462 1 model_lifecycle.cc:461] loading: model_ONNX:1
+I1213 23:03:36.774501 1 model_lifecycle.cc:461] loading: model_TRT_INT8:1
+I1213 23:03:36.774537 1 model_lifecycle.cc:461] loading: model_TRT_FP16:1
+I1213 23:03:36.774570 1 model_lifecycle.cc:461] loading: model_TRT_FP32:1
+I1213 23:03:36.774595 1 model_lifecycle.cc:461] loading: tokenizer:1
+I1213 23:03:36.832094 1 tensorrt.cc:65] TRITONBACKEND_Initialize: tensorrt
+I1213 23:03:36.832135 1 tensorrt.cc:75] Triton TRITONBACKEND API version: 1.17
+I1213 23:03:36.832138 1 tensorrt.cc:81] 'tensorrt' TRITONBACKEND API version: 1.17
+I1213 23:03:36.832142 1 tensorrt.cc:105] backend configuration:
+{"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}}
+I1213 23:03:36.832568 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_BEST (version 1)
+I1213 23:03:36.834254 1 onnxruntime.cc:2608] TRITONBACKEND_Initialize: onnxruntime
+I1213 23:03:36.834283 1 onnxruntime.cc:2618] Triton TRITONBACKEND API version: 1.17
+I1213 23:03:36.834286 1 onnxruntime.cc:2624] 'onnxruntime' TRITONBACKEND API version: 1.17
+I1213 23:03:36.834289 1 onnxruntime.cc:2654] backend configuration:
+{"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}}
+I1213 23:03:36.853237 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_FP16 (version 1)
+I1213 23:03:36.853304 1 onnxruntime.cc:2719] TRITONBACKEND_ModelInitialize: model_ONNX (version 1)
+I1213 23:03:36.853360 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_INT8 (version 1)
+I1213 23:03:36.854012 1 onnxruntime.cc:692] skipping model configuration auto-complete for 'model_ONNX': inputs and outputs already specified
+I1213 23:03:36.854194 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:36.854246 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:36.854934 1 onnxruntime.cc:2784] TRITONBACKEND_ModelInstanceInitialize: model_ONNX_0_0 (GPU device 0)
+I1213 23:03:37.091435 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.113804 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.131633 1 logging.cc:46] Loaded engine size: 134 MiB
+I1213 23:03:37.234097 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +385, now: CPU 0, GPU 385 (MiB)
+2024-12-13 23:03:37.255436877 [W:onnxruntime:, session_state.cc:1162 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+2024-12-13 23:03:37.255473438 [W:onnxruntime:, session_state.cc:1164 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.
+I1213 23:03:37.267006 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_BEST_0_0 (GPU device 0)
+I1213 23:03:37.285677 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +132, now: CPU 0, GPU 258 (MiB)
+I1213 23:03:37.304687 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_FP16_0_0 (GPU device 0)
+I1213 23:03:37.304896 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU -122, now: CPU 0, GPU 131 (MiB)
+I1213 23:03:37.325786 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_INT8_0_0 (GPU device 0)
+I1213 23:03:37.505996 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.540226 1 model_lifecycle.cc:818] successfully loaded 'model_ONNX'
+I1213 23:03:37.540503 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_FP32 (version 1)
+I1213 23:03:37.541126 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:37.636916 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +126, now: CPU 0, GPU 126 (MiB)
+I1213 23:03:37.651782 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:37.725213 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +23, now: CPU 0, GPU 149 (MiB)
+I1213 23:03:37.725529 1 instance_state.cc:188] Created instance model_TRT_BEST_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:37.726068 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_BEST'
+I1213 23:03:37.858633 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.990768 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +126, now: CPU 0, GPU 275 (MiB)
+I1213 23:03:38.004210 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:38.072078 1 logging.cc:46] Loaded engine size: 254 MiB
+I1213 23:03:38.134687 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +276, now: CPU 0, GPU 551 (MiB)
+I1213 23:03:38.134932 1 instance_state.cc:188] Created instance model_TRT_FP16_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:38.135309 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_FP16'
+I1213 23:03:38.218882 1 logging.cc:46] Loaded engine size: 134 MiB
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+I1213 23:03:38.352824 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +385, now: CPU 0, GPU 683 (MiB)
+I1213 23:03:38.389036 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU -121, now: CPU 0, GPU 430 (MiB)
+I1213 23:03:38.389503 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_FP32_0_0 (GPU device 0)
+I1213 23:03:38.401498 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:38.464053 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +24, now: CPU 0, GPU 454 (MiB)
+I1213 23:03:38.464288 1 instance_state.cc:188] Created instance model_TRT_INT8_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:38.464644 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_INT8'
+I1213 23:03:38.794167 1 logging.cc:46] Loaded engine size: 254 MiB
+I1213 23:03:39.047835 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +253, now: CPU 0, GPU 707 (MiB)
+I1213 23:03:39.178245 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +42, now: CPU 0, GPU 749 (MiB)
+I1213 23:03:39.178483 1 instance_state.cc:188] Created instance model_TRT_FP32_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:39.178940 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_FP32'
+I1213 23:03:39.660281 1 python_be.cc:2363] TRITONBACKEND_ModelInstanceInitialize: tokenizer_0_0 (CPU device 0)
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+I1213 23:03:40.346961 1 model_lifecycle.cc:818] successfully loaded 'tokenizer'
+I1213 23:03:40.347431 1 model_lifecycle.cc:461] loading: ensemble:1
+I1213 23:03:40.347666 1 model_lifecycle.cc:818] successfully loaded 'ensemble'
+I1213 23:03:40.347764 1 server.cc:606] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1213 23:03:40.347832 1 server.cc:633] 
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                        |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| tensorrt    | /opt/tritonserver/backends/tensorrt/libtriton_tensorrt.so       | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| python      | /opt/tritonserver/backends/python/libtriton_python.so           | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1213 23:03:40.347890 1 server.cc:676] 
++----------------+---------+--------+
+| Model          | Version | Status |
++----------------+---------+--------+
+| ensemble       | 1       | READY  |
+| model_ONNX     | 1       | READY  |
+| model_TRT_BEST | 1       | READY  |
+| model_TRT_FP16 | 1       | READY  |
+| model_TRT_FP32 | 1       | READY  |
+| model_TRT_INT8 | 1       | READY  |
+| tokenizer      | 1       | READY  |
++----------------+---------+--------+
+
+I1213 23:03:40.372293 1 metrics.cc:817] Collecting metrics for GPU 0: NVIDIA GeForce RTX 3080
+I1213 23:03:40.373272 1 metrics.cc:710] Collecting CPU metrics
+I1213 23:03:40.373447 1 tritonserver.cc:2483] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.41.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /models                                                                                                                                                                                                         |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1213 23:03:40.375152 1 grpc_server.cc:2495] Started GRPCInferenceService at 0.0.0.0:8001
+I1213 23:03:40.375380 1 http_server.cc:4619] Started HTTPService at 0.0.0.0:8000
+I1213 23:03:40.418000 1 http_server.cc:282] Started Metrics Service at 0.0.0.0:8002
+(venv) ubuntu@mlops-communal:~/im_zdi$ deactivate
+ubuntu@mlops-communal:~/im_zdi$ docker logs a5cfa3bc30c3 > triton_logs.txt
+I1213 23:03:36.771163 1 pinned_memory_manager.cc:241] Pinned memory pool is created at '0x7055cc000000' with size 268435456
+I1213 23:03:36.771433 1 cuda_memory_manager.cc:107] CUDA memory pool is created on device 0 with size 67108864
+I1213 23:03:36.774384 1 model_lifecycle.cc:461] loading: model_TRT_BEST:1
+I1213 23:03:36.774462 1 model_lifecycle.cc:461] loading: model_ONNX:1
+I1213 23:03:36.774501 1 model_lifecycle.cc:461] loading: model_TRT_INT8:1
+I1213 23:03:36.774537 1 model_lifecycle.cc:461] loading: model_TRT_FP16:1
+I1213 23:03:36.774570 1 model_lifecycle.cc:461] loading: model_TRT_FP32:1
+I1213 23:03:36.774595 1 model_lifecycle.cc:461] loading: tokenizer:1
+I1213 23:03:36.832094 1 tensorrt.cc:65] TRITONBACKEND_Initialize: tensorrt
+I1213 23:03:36.832135 1 tensorrt.cc:75] Triton TRITONBACKEND API version: 1.17
+I1213 23:03:36.832138 1 tensorrt.cc:81] 'tensorrt' TRITONBACKEND API version: 1.17
+I1213 23:03:36.832142 1 tensorrt.cc:105] backend configuration:
+{"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}}
+I1213 23:03:36.832568 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_BEST (version 1)
+I1213 23:03:36.834254 1 onnxruntime.cc:2608] TRITONBACKEND_Initialize: onnxruntime
+I1213 23:03:36.834283 1 onnxruntime.cc:2618] Triton TRITONBACKEND API version: 1.17
+I1213 23:03:36.834286 1 onnxruntime.cc:2624] 'onnxruntime' TRITONBACKEND API version: 1.17
+I1213 23:03:36.834289 1 onnxruntime.cc:2654] backend configuration:
+{"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}}
+I1213 23:03:36.853237 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_FP16 (version 1)
+I1213 23:03:36.853304 1 onnxruntime.cc:2719] TRITONBACKEND_ModelInitialize: model_ONNX (version 1)
+I1213 23:03:36.853360 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_INT8 (version 1)
+I1213 23:03:36.854012 1 onnxruntime.cc:692] skipping model configuration auto-complete for 'model_ONNX': inputs and outputs already specified
+I1213 23:03:36.854194 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:36.854246 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:36.854934 1 onnxruntime.cc:2784] TRITONBACKEND_ModelInstanceInitialize: model_ONNX_0_0 (GPU device 0)
+I1213 23:03:37.091435 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.113804 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.131633 1 logging.cc:46] Loaded engine size: 134 MiB
+I1213 23:03:37.234097 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +385, now: CPU 0, GPU 385 (MiB)
+2024-12-13 23:03:37.255436877 [W:onnxruntime:, session_state.cc:1162 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+2024-12-13 23:03:37.255473438 [W:onnxruntime:, session_state.cc:1164 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.
+I1213 23:03:37.267006 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_BEST_0_0 (GPU device 0)
+I1213 23:03:37.285677 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +132, now: CPU 0, GPU 258 (MiB)
+I1213 23:03:37.304687 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_FP16_0_0 (GPU device 0)
+I1213 23:03:37.304896 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU -122, now: CPU 0, GPU 131 (MiB)
+I1213 23:03:37.325786 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_INT8_0_0 (GPU device 0)
+I1213 23:03:37.505996 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.540226 1 model_lifecycle.cc:818] successfully loaded 'model_ONNX'
+I1213 23:03:37.540503 1 tensorrt.cc:231] TRITONBACKEND_ModelInitialize: model_TRT_FP32 (version 1)
+I1213 23:03:37.541126 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:37.636916 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +126, now: CPU 0, GPU 126 (MiB)
+I1213 23:03:37.651782 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:37.725213 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +23, now: CPU 0, GPU 149 (MiB)
+I1213 23:03:37.725529 1 instance_state.cc:188] Created instance model_TRT_BEST_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:37.726068 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_BEST'
+I1213 23:03:37.858633 1 logging.cc:46] Loaded engine size: 127 MiB
+I1213 23:03:37.990768 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +126, now: CPU 0, GPU 275 (MiB)
+I1213 23:03:38.004210 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:38.072078 1 logging.cc:46] Loaded engine size: 254 MiB
+I1213 23:03:38.134687 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +276, now: CPU 0, GPU 551 (MiB)
+I1213 23:03:38.134932 1 instance_state.cc:188] Created instance model_TRT_FP16_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:38.135309 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_FP16'
+I1213 23:03:38.218882 1 logging.cc:46] Loaded engine size: 134 MiB
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+I1213 23:03:38.352824 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +385, now: CPU 0, GPU 683 (MiB)
+I1213 23:03:38.389036 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU -121, now: CPU 0, GPU 430 (MiB)
+I1213 23:03:38.389503 1 tensorrt.cc:297] TRITONBACKEND_ModelInstanceInitialize: model_TRT_FP32_0_0 (GPU device 0)
+I1213 23:03:38.401498 1 logging.cc:46] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+I1213 23:03:38.464053 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +24, now: CPU 0, GPU 454 (MiB)
+I1213 23:03:38.464288 1 instance_state.cc:188] Created instance model_TRT_INT8_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:38.464644 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_INT8'
+I1213 23:03:38.794167 1 logging.cc:46] Loaded engine size: 254 MiB
+I1213 23:03:39.047835 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +253, now: CPU 0, GPU 707 (MiB)
+I1213 23:03:39.178245 1 logging.cc:46] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +42, now: CPU 0, GPU 749 (MiB)
+I1213 23:03:39.178483 1 instance_state.cc:188] Created instance model_TRT_FP32_0_0 on GPU 0 with stream priority 0 and optimization profile default[0];
+I1213 23:03:39.178940 1 model_lifecycle.cc:818] successfully loaded 'model_TRT_FP32'
+I1213 23:03:39.660281 1 python_be.cc:2363] TRITONBACKEND_ModelInstanceInitialize: tokenizer_0_0 (CPU device 0)
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+I1213 23:03:40.346961 1 model_lifecycle.cc:818] successfully loaded 'tokenizer'
+I1213 23:03:40.347431 1 model_lifecycle.cc:461] loading: ensemble:1
+I1213 23:03:40.347666 1 model_lifecycle.cc:818] successfully loaded 'ensemble'
+I1213 23:03:40.347764 1 server.cc:606] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1213 23:03:40.347832 1 server.cc:633] 
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                        |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| tensorrt    | /opt/tritonserver/backends/tensorrt/libtriton_tensorrt.so       | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| python      | /opt/tritonserver/backends/python/libtriton_python.so           | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1213 23:03:40.347890 1 server.cc:676] 
++----------------+---------+--------+
+| Model          | Version | Status |
++----------------+---------+--------+
+| ensemble       | 1       | READY  |
+| model_ONNX     | 1       | READY  |
+| model_TRT_BEST | 1       | READY  |
+| model_TRT_FP16 | 1       | READY  |
+| model_TRT_FP32 | 1       | READY  |
+| model_TRT_INT8 | 1       | READY  |
+| tokenizer      | 1       | READY  |
++----------------+---------+--------+
+
+I1213 23:03:40.372293 1 metrics.cc:817] Collecting metrics for GPU 0: NVIDIA GeForce RTX 3080
+I1213 23:03:40.373272 1 metrics.cc:710] Collecting CPU metrics
+I1213 23:03:40.373447 1 tritonserver.cc:2483] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.41.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /models                                                                                                                                                                                                         |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1213 23:03:40.375152 1 grpc_server.cc:2495] Started GRPCInferenceService at 0.0.0.0:8001
+I1213 23:03:40.375380 1 http_server.cc:4619] Started HTTPService at 0.0.0.0:8000
+I1213 23:03:40.418000 1 http_server.cc:282] Started Metrics Service at 0.0.0.0:8002

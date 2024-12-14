@@ -1,0 +1,46 @@
+...HW3/torch2onnx.py
+
+Max diff between torch and onnx: 4.172325134277344e-07
+Unsupported operator aten::embedding encountered 2 time(s)
+Unsupported operator aten::add encountered 13 time(s)
+Unsupported operator aten::rsub encountered 1 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 6 time(s)
+Unsupported operator aten::gelu encountered 6 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+model.transformer.layer.0.attention.dropout, model.transformer.layer.1.attention.dropout, model.transformer.layer.2.attention.dropout, model.transformer.layer.3.attention.dropout, model.transformer.layer.4.attention.dropout, model.transformer.layer.5.attention.dropout
+=== FLOP Analysis ===
+Total FLOPs: 340150272
+
+Arithmetic-limited operators (example heuristic):
+
+Memory-limited operators (example heuristic):
+layer_norm: 399360
+linear: 339750912
+
+Threshold batch size for arithmetic limitation: 32
+
+...test_inputs.py
+
+['INPUT_IDS', 'ATTENTION_MASK']
+
+
+-------------------------------------------------------------------
+
+Max diff between torch and onnx: 7.152557373046875e-07
+Unsupported operator aten::embedding encountered 2 time(s)
+Unsupported operator aten::add encountered 13 time(s)
+Unsupported operator aten::rsub encountered 1 time(s)
+Unsupported operator aten::scaled_dot_product_attention encountered 6 time(s)
+Unsupported operator aten::gelu encountered 6 time(s)
+The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+model.transformer.layer.0.attention.dropout, model.transformer.layer.1.attention.dropout, model.transformer.layer.2.attention.dropout, model.transformer.layer.3.attention.dropout, model.transformer.layer.4.attention.dropout, model.transformer.layer.5.attention.dropout
+=== FLOP Analysis ===
+Total FLOPs: 340150272
+
+Arithmetic-limited operators (example heuristic):
+
+Memory-limited operators (example heuristic):
+layer_norm: 399360
+linear: 339750912
+
+Threshold batch size for arithmetic limitation: 32

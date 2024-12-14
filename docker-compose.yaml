@@ -1,0 +1,22 @@
+services:
+  triton_server:
+    image: nvcr.io/nvidia/tritonserver:23.12-py3
+    command: tritonserver --model-repository=/models --http-port=8000 --grpc-port=8001 --metrics-port=8002
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "8700:8000"
+      - "8701:8001"
+      - "8702:8002"
+    volumes:
+      - ./model_repository:/models
+      - ./assets:/assets
+      - ./init.sh:/init.sh
+    environment:
+      - LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+    shm_size: '1g'

@@ -1,0 +1,69 @@
+Folder and File Structure:
+
+readme.md
+convert_to_trt.sh
+Dockerfile
+client.py
+init.sh
+docker-compose.yaml
+distilbert.onnx
+run_tests.sh
+torch2onnx.py
+config.yml
+collect_files.py
+collect_files_im_zdi.txt
+collect_files_MLOps_SBT.txt
+assets/
+    tokenizer/
+        special_tokens_map.json
+        tokenizer.json
+        tokenizer_config.json
+        vocab.txt
+    trt_plans/
+        model_best.plan
+        model_fp16.plan
+        model_fp32.plan
+        model_int8.plan
+data/
+    data.csv
+logs_local/
+    perf_model/
+        perf_model_ONNX.log
+        perf_model_TRT_BEST.log
+        perf_model_TRT_FP16.log
+        perf_model_TRT_FP32.log
+        perf_model_TRT_INT8.log
+    triton/
+        triton_logs.txt
+    torch2onnx/
+        torch2onnx.log
+model_repository/
+    ensemble/
+        config.pbtxt
+        1/
+            .gitkeep
+    model_ONNX/
+        config.pbtxt
+        1/
+            model.onnx
+    model_TRT_BEST/
+        config.pbtxt
+        1/
+            model.plan
+    model_TRT_FP16/
+        config.pbtxt
+        1/
+            model.plan
+    model_TRT_FP32/
+        config.pbtxt
+        1/
+            model.plan
+    model_TRT_INT8/
+        config.pbtxt
+        1/
+            model.plan
+    tokenizer/
+        config.pbtxt
+        requirements.txt
+        1/
+            model.py

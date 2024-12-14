@@ -1,0 +1,9 @@
+model_repository: /models
+profile_models: 
+  - model_ONNX
+  - model_TRT_FP32
+  - model_TRT_FP16
+  - model_TRT_INT8
+  - model_TRT_BEST
+triton_launch_mode: local
+output_model_repository_path: /workspace/results
