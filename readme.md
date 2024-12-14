@@ -2,7 +2,7 @@
 
 В данном задании мы работаем с Nvidia Triton Inference Server, учимся экспортировать модели в ONNX, конвертировать их в TensorRT и деплоить в Triton. Также будут произведены замеры производительности, оценка качества эмбеддингов и анализ FLOPs модели.
 
-Модели доступны в архиве по ссылке: [HW3](https://1drv.ms/f/s!Aj2ZFqNseiI6htQ4rG6pMzciB60Stw?e=hYySWg)
+Модели доступны в архиве по ссылке: [HW3](https://1drv.ms/f/s!Aj2ZFqNseiI6htQ4rG6pMzciB60Stw)
 
 ## Цели:
 
